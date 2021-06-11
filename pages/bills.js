@@ -41,7 +41,7 @@ export default function billsPage({ bills }) {
 }
 
 export async function getServerSideProps() {
-  const billsRes = await fetch(`${API_URL}/api/bills`);
+  const billsRes = await fetch(`${process.env.API_URL}/api/bills`);
   const bills = await billsRes.json();
 
   return {

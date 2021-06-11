@@ -21,16 +21,13 @@ export default function editCreditCards({ creditCard }) {
   const submitForm = async (e) => {
     e.preventDefault();
 
-    const res = fetch(
-      `http://localhost:3000/api/creditCards/${creditCard.data._id}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      }
-    );
+    const res = fetch(`${API_URL}/api/creditCards/${creditCard.data._id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    });
     setShowModal(true);
     setTimeout(() => {
       router.push('/creditCards');

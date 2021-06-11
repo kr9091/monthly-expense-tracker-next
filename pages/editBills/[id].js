@@ -21,7 +21,7 @@ export default function editBills({ bill }) {
   const submitForm = async (e) => {
     e.preventDefault();
 
-    const res = fetch(`http://localhost:3000/api/bills/${bill.data._id}`, {
+    const res = fetch(`${API_URL}/api/bills/${bill.data._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ export default function editBills({ bill }) {
 }
 
 export async function getServerSideProps({ query: { id } }) {
-  const res = await fetch(`http://localhost:3000/api/bills/${id}`);
+  const res = await fetch(`${API_URL}/api/bills/${id}`);
   const bill = await res.json();
 
   return {
