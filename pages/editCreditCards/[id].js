@@ -102,7 +102,7 @@ export default function editCreditCards({ creditCard }) {
 }
 
 export async function getServerSideProps({ query: { id } }) {
-  const res = await fetch(`http://localhost:3000/api/creditCards/${id}`);
+  const res = await fetch(`${API_URL}/api/creditCards/${id}`);
   const creditCard = await res.json();
 
   return {

@@ -48,7 +48,7 @@ export default function creditCardsPage({ creditCards }) {
 }
 
 export async function getServerSideProps() {
-  const creditCardRes = await fetch('http://localhost:3000/api/creditCards');
+  const creditCardRes = await fetch(`${API_URL}/api/creditCards`);
   const creditCards = await creditCardRes.json();
 
   return {
