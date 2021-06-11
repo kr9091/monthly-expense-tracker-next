@@ -41,7 +41,7 @@ export default function billsPage({ bills }) {
 }
 
 export async function getServerSideProps() {
-  const billsRes = await fetch('http://localhost:3000/api/bills');
+  const billsRes = await fetch('/api/bills');
   const bills = await billsRes.json();
 
   return {
