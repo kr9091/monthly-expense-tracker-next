@@ -21,13 +21,16 @@ export default function editCreditCards({ creditCard }) {
   const submitForm = async (e) => {
     e.preventDefault();
 
-    const res = fetch(`${API_URL}/api/creditCards/${creditCard.data._id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(values),
-    });
+    const res = fetch(
+      `${process.env.API_URL}/api/creditCards/${creditCard.data._id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      }
+    );
     setShowModal(true);
     setTimeout(() => {
       router.push('/creditCards');
@@ -99,7 +102,7 @@ export default function editCreditCards({ creditCard }) {
 }
 
 export async function getServerSideProps({ query: { id } }) {
-  const res = await fetch(`${API_URL}/api/creditCards/${id}`);
+  const res = await fetch(`${process.env.API_URL}/api/creditCards/${id}`);
   const creditCard = await res.json();
 
   return {
