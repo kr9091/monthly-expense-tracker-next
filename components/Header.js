@@ -15,6 +15,9 @@ export default function Header() {
         <Link href='/creditCards'>
           <a>Credit Cards</a>
         </Link>
+        <Link href='/summary'>
+          <a>Summary</a>
+        </Link>
       </nav>
     </header>
   );
