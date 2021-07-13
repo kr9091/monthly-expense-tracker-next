@@ -35,14 +35,16 @@ export default function billsPage({ bills }) {
           ))}
         </tbody>
       </table>
-      <BillTotal bills={bills} />
+      {/* <BillTotal bills={bills} /> */}
     </Layout>
   );
 }
 
 export async function getServerSideProps() {
-  const billsRes = await fetch(`${process.env.API_URL}/api/bills`);
+  const billsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bills`);
   const bills = await billsRes.json();
+
+  console.log(bills);
 
   return {
     props: {

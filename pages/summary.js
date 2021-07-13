@@ -52,9 +52,11 @@ export default function totalPicture({ bills, creditCards }) {
 }
 
 export async function getServerSideProps() {
-  const billsRes = await fetch(`${process.env.API_URL}/api/bills`);
+  const billsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bills`);
   const bills = await billsRes.json();
-  const creditCardsRes = await fetch(`${process.env.API_URL}/api/creditCards`);
+  const creditCardsRes = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/creditCards`
+  );
   const creditCards = await creditCardsRes.json();
 
   return {
