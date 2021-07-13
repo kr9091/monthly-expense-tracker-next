@@ -7,18 +7,24 @@
   height: fit-content;
   border-spacing: 0 0.5rem;
   margin-top: 50px;
+  font-size: 0.9rem;
 }
 
 .table thead td {
   padding: 0.6rem 0.5rem;
   font-weight: bold;
-  width: 2rem;
+  width: max-content;
   text-align: center;
   border-bottom: 2px solid hsl(0, 0%, 22%);
 }
 
 .table thead tr {
   border-bottom: 2px solid hsl(0, 0%, 22%);
+}
+
+.table tbody td {
+  width: fit-content;
+  height: fit-content;
 }
 
 .table tbody tr {

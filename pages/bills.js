@@ -9,7 +9,7 @@ export default function billsPage({ bills }) {
   };
   return (
     <Layout title='Monthly Bills' description='All of your monthly bills'>
-      <h1 className={styles.h1}>Your Bills Page</h1>
+      <h3 className={styles.h1}>Your Bills Page</h3>
       <p className={styles.p}>
         Here you can see a summary of all of your monthly bills.
       </p>
@@ -35,7 +35,7 @@ export default function billsPage({ bills }) {
           ))}
         </tbody>
       </table>
-      {/* <BillTotal bills={bills} /> */}
+      <BillTotal bills={bills} />
     </Layout>
   );
 }
@@ -43,8 +43,6 @@ export default function billsPage({ bills }) {
 export async function getServerSideProps() {
   const billsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bills`);
   const bills = await billsRes.json();
-
-  console.log(bills);
 
   return {
     props: {

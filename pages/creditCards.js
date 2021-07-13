@@ -12,7 +12,7 @@ export default function creditCardsPage({ creditCards }) {
       title='Credit Cards'
       description='Your monthly credit card balances and minimum payments.'
     >
-      <h1 className={styles.h1}>Credit Cards Page</h1>
+      <h3 className={styles.h1}>Credit Cards Page</h3>
       <p className={styles.p}>
         Your monthly credit card balances and minimum payments
       </p>

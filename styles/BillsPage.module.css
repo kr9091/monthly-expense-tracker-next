@@ -3,10 +3,11 @@
   margin-top: 20px;
 }
 .table {
-  width: 98%;
+  width: 100%;
   height: fit-content;
   border-spacing: 0 0.5rem;
   margin-top: 50px;
+  font-size: 0.9rem;
 }
 
 .table thead td {
